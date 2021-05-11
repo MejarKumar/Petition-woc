@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "petitionism-woc": {
+      "hosting": {
+        "PetitionIsm": [
+          "petitionism-woc"
+        ]
+      }
+    }
+  }
+}

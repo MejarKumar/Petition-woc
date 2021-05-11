@@ -1,0 +1,29 @@
+
+
+.full-screen{
+height: max-content;
+
+}
+#petitionlist-header{
+display: flex;
+justify-content: center;
+font-family: 'Itim';
+font: 500;
+font-size: 2rem;
+margin-top: 2rem;
+}
+.example-card {
+    max-width: 46rem;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+    background: #83dede;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  

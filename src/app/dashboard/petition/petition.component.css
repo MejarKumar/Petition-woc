@@ -1,0 +1,72 @@
+#matcard{
+    /* margin-top: 3rem; */
+    background: rgb(247, 234, 218);
+}
+
+
+
+#petition-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-family: 'Itim';
+  padding: 3rem;
+  color: #65f436;
+  background: #1d4b4b;
+}
+/* .example-form {
+    min-width: 150px;
+    /* max-width: 500px; */
+    /* width: 60rem; */
+
+  
+  /* .example-full-width {
+    width: 100%;
+  } */
+  .petition-box{
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0rem 1rem 0rem;
+  }
+  /* #petition-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 30rem;
+  } */
+  /* .next-btn{
+    text-align: right;
+    margin-right: 12rem;
+    margin-bottom: 1rem;
+   
+  } */
+/* .btn-container{
+  display: flex;
+  justify-content: space-between;
+} */
+.secbtn-container{
+  display: flex;
+  justify-content: space-around;
+}
+/* #sendbtn a{
+  text-decoration: none;
+  color: aliceblue;
+} */
+
+.write-petition-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  width: 30rem;
+
+}
+/* .button-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 1rem;
+} */

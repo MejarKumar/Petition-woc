@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&family=Itim&display=swap');
+body{
+     /* background: url(/PetitionIsm/images/typewriter-801921_1920.jpg); */
+    background: darkgoldenrod;
+}
+
+#navbartext{
+    font-family: 'Itim', cursive;
+    font-size: 2rem;
+    color: burlywood;
+    margin-left: 10rem;
+}
+#navlinktext{
+    font-family: 'Baloo 2', cursive;
+/* font-family: 'Itim', cursive; */
+    margin: 15px;
+    font-size: 23px;
+}
+#navlinktext:hover{
+color:cyan
+}
+mat-sidenav-container{
+    height: 100%;
+
+}
+mat-sidenav,mat-sidenav-content{
+    padding: 13px;
+    /* background: turquoise; */
+    height: auto;
+    display: block;
+    position: fixed;
+}
+mat-sidenav{
+    background:rgb(68, 68, 110);
+    width: 20rem;
+    display: block;
+    left: 0px;
+    top: 5.1rem;
+}
+.side-list{
+    /* background-color: royalblue; */
+    /* width: 100%; */
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+   flex-direction: column;
+   font-family: 'Itim', cursive;
+}
+
+.side-list li{
+list-style: none;
+/* padding: 14px 27px; */
+margin: 10px 0px;
+}
+
+.side-list li a{
+text-decoration: none;
+color: seashell;
+font-size: 20px;
+}
+.side-list li a:hover{
+    cursor: pointer;
+    color: rgb(34, 243, 86);
+    border-radius: 33px ;
+}
+#moreBtn{
+    display: block;
+    /* left: 89rem;*/
+} 
+.fa{
+    color: #ede8e2;
+    size: 2rem;
+    margin: 0.5rem;
+}
+.footer-section{
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    background: rgb(16, 17, 17);
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+    color: darkgrey;
+    font-size: 1rem;
+}
+#screen{
+    /* background-color: darkcyan; */
+    background-image: url('../assets/images/pencils-1280558_1920.jpg');
+  
+}

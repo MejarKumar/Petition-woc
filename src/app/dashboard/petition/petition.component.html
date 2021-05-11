@@ -1,0 +1,233 @@
+
+    <div class="container" fxLayoutAlign="center center" fxFlexFill>
+        <h4 id="petition-header">Write Your Petition</h4>
+
+        <mat-card id="matcard">
+<div class="write-petition-container">
+    <div class="petition-box">
+        <h2>Write Your Petition Title</h2>
+    </div>
+        <div class="form-group">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" [(ngModel)]="PetitionTitle"
+                    placeholder="Ex. Reopen the Colleges" required>
+                <label for="floatingInput">Write Title</label>
+            </div>
+        </div> </div>
+        <div class="container">
+            <h3 style="color: brown;">Note*</h3>
+            <h3>This is the first thing people will see about your petition. Get their attention
+                with a short
+                title that focusses on the change you’d like them to support. </h3>
+        </div>
+
+
+
+        <hr>
+        <div class="write-petition-container">
+            <div class="petition-box">
+                <h2>Tag Concerned Authority</h2>
+            </div>
+        <div class="form-group">
+          
+            <select class="form-select" [(ngModel)]="PetitionTagedAuthority"
+                aria-label="Default select example" required>
+               
+
+                <ng-container *ngFor="let TagAuthority of PetitionTagedAuthorities">
+                    <option value="{{TagAuthority.id}}">{{TagAuthority.value}} </option>
+
+                </ng-container>
+
+            </select>
+        </div>
+    </div>
+    <div class="container">
+        <h3 style="color: brown;">Note*</h3>
+        <h3>Choose the Authority of your petition. He has the power to solve your problem or
+            take the action
+            you’re demanding.</h3>
+    </div>
+<hr>
+
+    <div class="write-petition-container">
+        <div class="petition-box">
+            <h2>Write Your Problem(Description)</h2>
+        </div>
+        <div class="form-group">
+            <div class="form-floating">
+                <textarea type="textarea" class="form-control" [(ngModel)]="PetitionDescription"
+                    placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" required></textarea>
+                <label for="floatingTextarea2">Explain Your Problem</label>
+            </div>       </div>
+        </div>
+        <div class="container">
+            <h3 style="color: brown;">Note*</h3>
+            <h3>People/students are more likely to support your petition if it’s clear why you care.
+                Explain
+                how
+                this change will impact you.</h3>
+        </div>
+        <hr>
+
+        <div class="form-group">
+            <div class="secbtn-container">
+            <button class="btn btn-warning">Clear</button>
+            <button class="btn btn-success" [disabled]="!PetitionTitle || !PetitionTagedAuthority||!PetitionDescription"
+                (click)="createPetition()">Submit</button>
+                
+
+        </div>
+        <div></div>
+        </div>
+ 
+        <!--            
+                <div class="container p-3">
+
+                    <div class="container" id="petition-container">
+
+                        <form [formGroup]="dashboardservice.form" class="example-form" >
+
+                           
+                            <mat-form-field appearance="outline" class="example-full-width">
+
+                                <mat-label>Write Title</mat-label>
+                                <input matInput formControlName="PetitionTitle" placeholder="Ex. Reopen the Colleges"
+                                    required>
+
+                                <mat-error>This field is mandatory.</mat-error>
+
+                            </mat-form-field>
+
+                            
+                            <hr>
+                            <div class="petition-box">
+                                <h2></h2>
+                            </div>
+                            <mat-form-field appearance="outline" class="example-full-width">
+                                <mat-label>Choose Concerned Authority</mat-label>
+                                <mat-select formControlName="PetitionTagedAuthority">
+
+                                    <mat-option>None</mat-option>
+
+                                    <ng-container *ngFor="let TagAuthority of PetitionTagedAuthorities">
+                                        <mat-option value="{{TagAuthority.id}}">{{TagAuthority.value}} </mat-option>
+
+                                    </ng-container>
+
+                                </mat-select>
+                            </mat-form-field>
+                           
+
+                            <hr>
+                            <div class="petition-box">
+                                <h2></h2>
+
+                            </div>
+                            <mat-form-field appearance="outline" class="example-full-width">
+                                <mat-label>Write problem</mat-label>
+                                <textarea matInput formControlName="PetitionDescription"> </textarea>
+                                <mat-hint>Maximum numbers of word :100</mat-hint>
+                                <mat-error
+                                    *ngIf="dashboardservice.form.controls['PetitionDescription'].errors?.maxlength">
+                                </mat-error>
+                            </mat-form-field>
+
+
+                            <div class="secbtn-container">
+
+                                <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
+                                <button type="submit" mat-raised-button color="accent"
+                                    [disabled]="dashboardservice.form.invalid" >Submit</button>
+                            </div>
+
+                            
+
+                        </form>
+                    </div>
+                </div>
+
+ -->
+
+
+
+
+
+
+
+
+
+        <!-- 
+                <div class="container p-3">
+
+                    <div class="container" id="petition-container">
+                        <mat-card style="width: 50rem;">
+                            <mat-card-title>
+                                <h2>Preview of your Petition</h2>
+                            </mat-card-title>
+
+                            <mat-card-content>
+
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h4>Title Of Petition</h4>
+                                    </div>
+                                    <div class="col-md-9 text-secondary">
+                                        <h4>Reopen the Colleges</h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h4>Taged Authority </h4>
+                                    </div>
+                                    <div class="col-md-9 text-secondary">
+                                        <h4>Academics</h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h4>Description</h4>
+                                    </div>
+                                    <div class="col-md-9 text-secondary">
+                                        <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum veritatis
+                                            nihil doloribus voluptate error praesentium, soluta perspiciatis alias at,
+                                            minima obcaecati pariatur dolorem magni illum harum quos? Soluta, laborum
+                                            expedita.</h4>
+                                    </div>
+                                </div>
+                                <div class="preview-box">
+                                    <ul>
+                                        <li>
+                                            <h3>Title Of Petition: Reopen the Colleges</h3>
+
+
+                                        </li>
+                                        <li>
+                                            <h3> Taged Authority: Academics</h3>
+                                        </li>
+                                        <li>
+                                            <h3>Problems: Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                                Optio unde alias officia commodi repudiandae omnis exercitationem
+                                                deserunt repellat hic maxime cumque similique quisquam, provident amet
+                                                aspernatur laboriosam nisi atque explicabo?</h3>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                </div>
+
+
+                <div class="next-btn">
+                    <button id="sendbtn" type="submit" class="btn btn-success">Submit</button>
+                </div>
+                <div class="container">
+                    <h3 style="color: brown;">Note*</h3>
+                    <h3>This is the final Preview pf this petition, peoples/students will see about your petition. Get
+                        their attention with a careful read.</h3>
+                </div> -->
+            </mat-card>
+
+    </div>
