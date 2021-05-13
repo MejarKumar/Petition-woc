@@ -9,3 +9,10 @@ body{
 /* .mat-typography{
     background: #d8c5a9
 } */
+.buttonsection{
+    display: flex;
+    justify-content: center;
+}
+.buttonsection button:hover {
+    background-color: green;
+}

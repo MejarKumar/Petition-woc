@@ -1,0 +1,76 @@
+
+
+<div class="full-screen" >
+    
+    <div class="container">
+      <div class="col"  *ngFor="let item of Petition">
+    <mat-card class="example-card" *ngIf="item.id == Searched_Id">
+      <div class="petition-box-container"  >
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{item.Title}}</mat-card-title>
+          <mat-card-subtitle  style="color: #a45e2d;"> @{{item.TagedAuthority}}   ,<span style="margin-left:2rem;">{{item.TimeSent}}</span>   </mat-card-subtitle>
+        </mat-card-header>
+        
+        <mat-card-content>
+         
+          <p>
+            {{item.Description}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+        <button mat-raised-button> <mat-icon>favorite</mat-icon></button>
+   
+        <!-- <button mat-raised-button color="accent">Share</button> -->
+        <button mat-raised-button color="primary" [matMenuTriggerFor]="Share">Share</button>
+     <mat-menu #Share="matMenu">
+       <share-buttons 
+       [theme]="'materal-dark'"
+       [include]="['facebook',
+       'twitter','linkedin','telegram','messenger','whatsapp','sms','email','copy']"
+       [show]="9"
+       [size]="1"
+       [url]="'http://localhost:4200/detail/cywZ6xjC9RG52jdE8sqB'"
+       [autoSetMeta]="false"
+       >
+       </share-buttons>
+       
+     </mat-menu>
+     
+        <!-- <i class="fa fa-heart" aria-hidden="true"></i>
+        <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+        <i class="fa fa-share-alt" aria-hidden="true"></i> -->
+       
+     <a routerLink="/detail/{{item.id}}"> <button mat-raised-button color="accent">More</button></a>
+         </mat-card-actions>
+        <!-- <mat-card-actions>
+         
+       <!-- <i class="fa fa-heart" aria-hidden="true"></i>
+       <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+       <i class="fa fa-share-alt" aria-hidden="true"></i> -->
+       <!-- <share-buttons   
+    [theme]="'materal-dark'"
+    [include]="['facebook',
+    'twitter','linkedin','telegram','messenger','whatsapp','sms','email','copy']"
+    [show]="9"
+    [size]="1"
+    [url]="'http://localhost:4200/petitionlist'"
+    [autoSetMeta]="false"
+    >
+       </share-buttons>
+    
+        </mat-card-actions> -->
+      </div>
+ 
+      </mat-card>
+    </div>
+    </div>
+    
+    
+    
+        
+    
+    
+    </div>
+    
+    

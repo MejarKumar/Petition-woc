@@ -7,10 +7,16 @@ import { RegisterComponent } from './login/register/register.component';
 import {ProfileComponent} from './dashboard/profile/profile.component'
 import {PetitionListComponent} from './dashboard/petition-list/petition-list.component';
 import {AcademicinfoComponent} from './dashboard/academicinfo/academicinfo.component'
+import { DetailComponent } from './dashboard/detail/detail.component';
+
+import { AngularFireAuthGuard, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
+
+
+const redirectLoggedInToItems = () => redirectUnauthorizedTo(['login']);
 const routes: Routes = [
-{
-  path:"",component:LoginFormComponent
-},
+  {
+    path:"", redirectTo:"/loginform", pathMatch:"full"   
+  },
 {
   path:"loginform",component:LoginFormComponent
 },
@@ -18,20 +24,35 @@ const routes: Routes = [
   path:"register",component:RegisterComponent
 },
 {
-  path:"home",component:HomeComponent
+  path:"home",component:HomeComponent,
+  canActivate: [AngularFireAuthGuard],
+  data: { authGuardPipe: redirectLoggedInToItems }
 },
 {
-  path:"petition",component:PetitionComponent
+  path:"petition",component:PetitionComponent,
+  canActivate: [AngularFireAuthGuard],
+  data: { authGuardPipe: redirectLoggedInToItems }
 },
 {
-  path:"petitionlist",component:PetitionListComponent
+  path:"petitionlist",component:PetitionListComponent,
+  canActivate: [AngularFireAuthGuard],
+  data: { authGuardPipe: redirectLoggedInToItems }
 },
 {
-  path:"profile",component:ProfileComponent
+  path:"profile",component:ProfileComponent,
+  canActivate: [AngularFireAuthGuard],
+  data: { authGuardPipe: redirectLoggedInToItems }
 },
 {
-  path:"academicinfo",component:AcademicinfoComponent
+  path:"academicinfo",component:AcademicinfoComponent,
+  canActivate: [AngularFireAuthGuard],
+  data: { authGuardPipe: redirectLoggedInToItems }
 },
+{
+  path:"detail/:id", component:DetailComponent,
+  canActivate: [AngularFireAuthGuard],
+  data: { authGuardPipe: redirectLoggedInToItems }
+}
 
 
 ];

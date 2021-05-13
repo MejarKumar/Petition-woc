@@ -6,7 +6,7 @@
 
 .example-card {
     max-width: 39rem;
-    height:39rem ;
+    height:max-content ;
     background: #1e4141;
     color: #cbd69f;
     font-family: 'Nunito', sans-serif;
@@ -27,6 +27,7 @@
   font-size: 1.7rem;
   margin-bottom: 15px;
 }
+
 mat-card-actions a button:hover{
 color: cornsilk;
 background-color: rgb(60, 66, 4);
@@ -35,11 +36,13 @@ background-color: rgb(60, 66, 4);
   display: flex;
   justify-content: center;
   font-size: 2rem;
-  font-family: 'Itim';
-  
+  font-family: 'Texturina', serif;
   padding: 1.3rem;
     color: #f1eed3;
 }
 mat-grid-tile{
   background: none;
+}
+.card-text{
+  font-size: 1rem;
 }

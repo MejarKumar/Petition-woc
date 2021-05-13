@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DashboardService} from '../dashboard.service'
-
+import { LoadingBarService } from '@ngx-loading-bar/core';
  @Component({
   selector: 'app-petition',
   templateUrl: './petition.component.html',
@@ -13,7 +13,7 @@ PetitionTagedAuthority:string | any;
 PetitionDescription:string;
 TimeSent: Date = new Date()
    
-  constructor(public dashboardservice:DashboardService) { }
+  constructor(public dashboardservice:DashboardService,  private loadingBar:LoadingBarService) { }
   
   
   PetitionTagedAuthorities= [
@@ -26,10 +26,11 @@ TimeSent: Date = new Date()
 ]
 
   ngOnInit(): void {
+    
 this.dashboardservice.get_AllPetition().subscribe(data =>{
   this.Petition= data.map(e=>{
     return{
-      id:e.payload.doc.id,
+      // id:e.payload.doc.id,
       Title:e.payload.doc.data()['Title'],
       TagedAuthority:e.payload.doc.data()['TagedAuthority'],
       Description:e.payload.doc.data()['Description'],
@@ -61,14 +62,23 @@ console.log(res)
   
   
 }
-
+// method for get time 
 getTimeStamp(){
 const now= new Date();
 const date = now.getUTCFullYear()+ '/' + (now.getUTCMonth()+ 1) +'/' + now.getUTCDate();
 const time = now.getHours()+ ':' + now.getMinutes() + ':' + now.getSeconds();
 return (date +'; ' + time);
 }
-  
+
+
+// method for loadingnar
+startLoading() {
+  this.loadingBar.start();
+}
+
+stopLoading() {
+  this.loadingBar.complete();
+}
 }
   
 // function create_newPetition() {

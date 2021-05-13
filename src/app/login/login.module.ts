@@ -9,6 +9,7 @@ import{MatFormFieldModule} from '@angular/material/form-field'
 import{MatInputModule} from '@angular/material/input'
 import{MatCardModule} from '@angular/material/card'
 import{MatTabsModule} from '@angular/material/tabs'
+import { NgProgressModule } from 'ngx-progressbar';
 // import{MatCardModule} from '@angular/material/card'
 
 const MaterialComponent =[
@@ -28,7 +29,8 @@ const MaterialComponent =[
   imports: [
     CommonModule,
     MaterialComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgProgressModule
   ],
   exports:[
     MaterialComponent

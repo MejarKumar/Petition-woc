@@ -15,14 +15,23 @@ import {MatGridListModule } from '@angular/material/grid-list'
  import {ReactiveFormsModule} from '@angular/forms'
 import {ShareButtonsModule} from 'ngx-sharebuttons/buttons';
 import {ShareIconsModule} from 'ngx-sharebuttons/icons';
+import {ShareModule} from 'ngx-sharebuttons'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgProgressModule } from 'ngx-progressbar';
+import { LoadingBarModule } from '@ngx-loading-bar/core';
+import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
+
 
 // firebase modules
+
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import {AngularFireModule} from '@angular/fire'
-import { AngularFireDatabaseModule} from '@angular/fire/database'
+
+import { AngularFireDatabaseModule, AngularFireObject} from '@angular/fire/database'
 import {environment } from '../environments/environment.prod';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { from } from 'rxjs';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +52,9 @@ import { from } from 'rxjs';
     MatGridListModule,
     AngularFireDatabaseModule,
     AngularFireModule,
+    
     AngularFirestoreModule,
+    
     AngularFireModule.initializeApp(environment.firebaseConfig),
     NgbModule,
     ReactiveFormsModule,
@@ -51,7 +62,11 @@ import { from } from 'rxjs';
     ShareButtonsModule.withConfig({
       debug:true,
     }),
-    ShareIconsModule
+    NgProgressModule,
+    LoadingBarModule,
+    LoadingBarRouterModule,
+    ShareIconsModule,
+    FontAwesomeModule
    
    
    

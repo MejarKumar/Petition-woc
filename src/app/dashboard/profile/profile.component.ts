@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {DashboardService} from '../dashboard.service'
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -7,13 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-
+  Petition:string|any;
  
 
 
-  constructor() { }
+  constructor(public dashboardservice:DashboardService) { }
 
   ngOnInit(): void {
+    
   }
 
-}
+  }
+
+

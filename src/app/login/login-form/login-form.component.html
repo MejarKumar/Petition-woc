@@ -4,17 +4,17 @@
 <mat-tab-group mat-scretch-tabs class="example-stretched-tabs">
     <mat-tab label="Sign In">
         <mat-card-content>
-            <form action="">
+            <form [formGroup]="loginform">
          <mat-form-field appearance="fill">
             <mat-label>Email</mat-label>
-             <input type="email"  matInput name="email"  required>
+             <input type="email"  formControlName="email"  matInput name="email"  required>
          </mat-form-field>
          <mat-form-field appearance="fill">
             <mat-label>Password</mat-label>
-             <input type="password" matInput name="password"  required>
+             <input type="password" formControlName="password"  matInput name="password"  required>
          </mat-form-field>
          <div id="loginBtn">
-             <button color="primary"  mat-raised-button>LOG IN</button>
+             <button color="primary" (click)="onLogin()"  mat-raised-button>LOG IN</button>
          </div>
             </form>
         </mat-card-content>
@@ -25,20 +25,20 @@
 
     <mat-tab label="Sign Up">
         <mat-card-content>
-            <form action="">
+            <form [formGroup]="registerform">
          <mat-form-field appearance="fill">
              <mat-label>Email</mat-label>
-             <input type="email" matInput name="email"  required>
+             <input type="email" matInput name="email" formControlName="email"  required>
              
          </mat-form-field>
          <mat-form-field appearance="fill">
              <mat-label>Password</mat-label>
-             <input type="password" matInput name="password"  required>
+             <input type="password" matInput name="password" formControlName="password" required>
             
              
          </mat-form-field>
          <div id="signupBtn">
-            <button color="primary" mat-raised-button>SIGN UP</button>
+            <button color="primary" type="submit" (click)=" createUser()" mat-raised-button>SIGN UP</button>
         </div>
             </form>
         </mat-card-content>

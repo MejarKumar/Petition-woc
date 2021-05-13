@@ -1,39 +1,53 @@
+
+
+
 <div class="full-screen">
     
 <div class="container">
     <h1 id="petitionlist-header">Petition List</h1><hr>
 </div>
 
-<!-- 
-<div class="container p-3">
-    <div class="container">
-<mat-card >
-   <mat-card-title></mat-card-title>
-     <mat-card-subtitle></mat-card-subtitle> -->
-  <!-- <--   <h2>   </h2>
-     <h2></h2>
-    --> 
-<!-- </mat-card> -->
 <div class="container">
 <mat-card class="example-card" *ngFor="let item of Petition">
+  <div class="petition-box-container">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title>{{item.Title}}</mat-card-title>
-      <mat-card-subtitle> @{{item.TagedAuthority}}   ,<span style="margin-left:2rem;"> {{item.TimeSent}}</span>   </mat-card-subtitle>
+      <mat-card-subtitle style="color: #a45e2d;"> @{{item.TagedAuthority}}   ,<span style="margin-left:2rem;"> {{item.TimeSent}}</span>   </mat-card-subtitle>
     </mat-card-header>
     
     <mat-card-content>
-      
+     
       <p>
         {{item.Description}}
       </p>
-    </mat-card-content>
-    <mat-card-actions>
      
-   <i class="fa fa-heart" aria-hidden="true"></i>
-   <i class="fa fa-thumbs-down" aria-hidden="true"></i>
-   <i class="fa fa-share-alt" aria-hidden="true"></i>
+    </mat-card-content><hr>
+    <mat-card-actions>
+      <div class="upvoted-section">
+        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </div>
+   <!-- <button mat-raised-button color="accent">Share</button> -->
+   <button mat-raised-button color="primary" [matMenuTriggerFor]="Share">Share</button>
+<mat-menu #Share="matMenu">
+  <share-buttons 
+  [theme]="'materal-dark'"
+  [include]="['facebook',
+  'twitter','linkedin','telegram','messenger','whatsapp','sms','email','copy']"
+  [show]="9"
+  [size]="1"
+  [url]="'http://localhost:4200/petitionlist/{{item.id}}'"
+  [autoSetMeta]="false"
+  >
+  </share-buttons>
+  
+</mat-menu>
+
+  
+<a routerLink="/detail/{{item.id}}"> <button mat-raised-button color="accent">More</button></a>
     </mat-card-actions>
+  </div>
   </mat-card>
   
 </div>
@@ -44,3 +58,5 @@
 
 
 </div>
+
+

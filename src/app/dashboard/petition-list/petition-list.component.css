@@ -10,20 +10,42 @@ justify-content: center;
 font-family: 'Itim';
 font: 500;
 font-size: 2rem;
-margin-top: 2rem;
+color: #c5fafa;
+padding-top: 2rem;
 }
-.example-card {
-    max-width: 46rem;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    margin-bottom: 3rem;
-    margin-top: 2rem;
-    background: #83dede;
-  }
+.example-card{
+  /* max-width: 46rem; */
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+  background: #24002E;
+    color: #C5C6EE;
+  width: 54rem;
+  height: fit-content;
+}
   
   .example-header-image {
     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
     background-size: cover;
   }
-  
+  .petition-box-container{
+    display: block;
+  }
+  .mat-card-actions {
+    margin-left: -8px;
+    margin-right: -8px;
+    padding: 8px 0;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0rem;
+}
+.mat-card-actions:not(.mat-card-actions-align-end) .mat-button:first-child, .mat-card-actions:not(.mat-card-actions-align-end) .mat-raised-button:first-child, .mat-card-actions:not(.mat-card-actions-align-end) .mat-stroked-button:first-child {
+  margin-left: 38px;
+  margin-right: 30px;
+}
+.upvoted-section{
+  font-size: 2rem;
+  margin-right: 1rem;
+}

@@ -72,9 +72,9 @@
 
         <div class="form-group">
             <div class="secbtn-container">
-            <button class="btn btn-warning">Clear</button>
+            <button class="btn btn-warning" (click)="stopLoading()">Clear</button>
             <button class="btn btn-success" [disabled]="!PetitionTitle || !PetitionTagedAuthority||!PetitionDescription"
-                (click)="createPetition()">Submit</button>
+            (click)="startLoading()"    (click)="createPetition()">Submit</button>
                 
 
         </div>
