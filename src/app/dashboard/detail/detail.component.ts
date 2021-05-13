@@ -21,7 +21,7 @@ export class DetailComponent implements OnInit {
       
       this.Petition= result.map(e=>{
             return{
-              // id:e.payload.doc.id,
+              id:e.payload.doc.id,
               Title:e.payload.doc.data()['Title'],
               TagedAuthority:e.payload.doc.data()['TagedAuthority'],
               Description:e.payload.doc.data()['Description'],
