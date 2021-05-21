@@ -30,9 +30,10 @@ import {MatGridListModule } from '@angular/material/grid-list'
  import{MatIconModule} from '@angular/material/icon'
 
  import { NgProgressModule } from 'ngx-progressbar';
+import {LoadingBarModule} from '@ngx-loading-bar/core'
  import {ShareButtonsModule} from 'ngx-sharebuttons/buttons';
 import {ShareIconsModule} from 'ngx-sharebuttons/icons';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DetailComponent } from './detail/detail.component';
 
 const MaterialComponent=[
@@ -66,6 +67,7 @@ const MaterialComponent=[
     MaterialComponent,
     ReactiveFormsModule,
     NgbModule,
+    LoadingBarModule,
     BrowserAnimationsModule,
     NgProgressModule,
     
@@ -73,7 +75,7 @@ const MaterialComponent=[
       debug:true,
     }),
     ShareIconsModule,
-    FontAwesomeModule
+    // FontAwesomeModule
   
   ],
   exports:[ MaterialComponent],

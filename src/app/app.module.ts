@@ -16,10 +16,10 @@ import {MatGridListModule } from '@angular/material/grid-list'
 import {ShareButtonsModule} from 'ngx-sharebuttons/buttons';
 import {ShareIconsModule} from 'ngx-sharebuttons/icons';
 import {ShareModule} from 'ngx-sharebuttons'
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { NgProgressModule } from 'ngx-progressbar';
-import { LoadingBarModule } from '@ngx-loading-bar/core';
-import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
+// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+// import { NgProgressModule } from 'ngx-progressbar';
+// import { LoadingBarModule } from '@ngx-loading-bar/core';
+// import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 
 
 // firebase modules
@@ -62,11 +62,11 @@ import { from } from 'rxjs';
     ShareButtonsModule.withConfig({
       debug:true,
     }),
-    NgProgressModule,
-    LoadingBarModule,
-    LoadingBarRouterModule,
-    ShareIconsModule,
-    FontAwesomeModule
+    // NgProgressModule,
+    // LoadingBarModule,
+    // LoadingBarRouterModule,
+    // ShareIconsModule,
+    // FontAwesomeModule
    
    
    
